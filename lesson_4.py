@@ -1,0 +1,34 @@
+import pgzrun
+WIDTH=600
+HEIGHT=400
+def draw_cloud(x,y):
+    screen.draw.filled_circle((x,y),18,(255,255,255))
+    screen.draw.filled_circle((x+22,y-10),22,(255,255,255))
+    screen.draw.filled_circle((x+45,y),18,(255,255,255))
+def draw():
+    screen.clear()
+    screen.fill((135,206,235))
+    screen.draw.filled_circle((500,80),40,(255,232,20))
+
+    draw_cloud(80,80)
+    draw_cloud(220,60)
+    draw_cloud(350,90)
+    for y in range(100,300):
+        x1=200-(y-100)
+        x2=200+(y-100)
+        screen.draw.line((x1,y),(x2,y),(64,42,18))
+    for y in range(100,150):
+        x1=200-(y-100)
+        x2=200+(y-100)
+        screen.draw.line((x1,y),(x2,y),(255,255,255))
+    for y in range(120,300):
+        x1=200-(y-120)
+        x2=200+(y-120)
+        screen.draw.line((x1,y),(x2,y),(64,42,18))
+    for y in range(120,150):
+        x1=200-(y-120)
+        x2=200+(y-120)
+        screen.draw.line((x1,y),(x2,y),(255,255,255))
+    river=Rect((270,300),(60,100))
+    screen.draw.filled_rect(river,(0,150,255))
+pgzrun.go()
